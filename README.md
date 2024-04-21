@@ -1,5 +1,5 @@
 ## Project Pillcase
-Backend for *Project Pillcase*. 
+Backend for *Project Pillcase*.
 
 Learning:
 
