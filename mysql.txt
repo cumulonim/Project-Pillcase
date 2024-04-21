@@ -1,0 +1,6 @@
+CREATE TABLE `pills` (
+  `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `grid` INT NOT NULL,
+  `piece` INT NOT NULL,
+  `time` TIMESTAMP NOT NULL
+);
