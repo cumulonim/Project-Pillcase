@@ -7,4 +7,5 @@ Learning:
 - SQLAlchemy
 - Swagger
 - Docker
+
 through the project.
