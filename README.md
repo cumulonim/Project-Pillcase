@@ -1,6 +1,8 @@
-## Project-Pillcase
-Backend for Project Pillcase. 
+## Project Pillcase
+Backend for *Project Pillcase*. 
+
 Learning:
+
 - Flask
 - RESTful api
 - MySQL
