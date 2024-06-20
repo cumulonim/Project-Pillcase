@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from flasgger import Swagger
 from sqlalchemy.exc import IntegrityError
 from datetime import datetime
@@ -12,15 +13,17 @@ basedir= os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
+cors = CORS(app)
+
 # 启用这一段是sqlite
-# basedir = os.path.abspath(os.path.dirname(__name__))
-# app.config['SQLALCHEMY_DATABASE_URI'] = \
-#    'sqlite:///' + os.path.join(basedir,'data.sqlite')
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+basedir = os.path.abspath(os.path.dirname(__name__))
+app.config['SQLALCHEMY_DATABASE_URI'] = \
+   'sqlite:///' + os.path.join(basedir,'data.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # 启用这一段是mysql+mysqldb
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root:test@127.0.0.1/restful_db'
-app.config.from_pyfile('../config.py', silent=True)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root:cumulonim@127.0.0.1:1433/pilldb?charset=utf8mb4'
+# app.config.from_pyfile('../config.py')
 
 # 这一段是swagger相关，暂时不启用
 # app.config.update({
@@ -34,8 +37,19 @@ app.config.from_pyfile('../config.py', silent=True)
 #     'APISPEC_SWAGGER_UI_URL': '/swagger-ui/'
 # })
 
-api = Api(app, catch_all_404s=True)
+api = Api(app)
 db = SQLAlchemy(app)
+
+# def create_app():
+#     app = Flask(__name__)
+#     basedir = os.path.abspath(os.path.dirname(__name__))
+#     app.config['SQLALCHEMY_DATABASE_URI'] = \
+#     'sqlite:///' + os.path.join(basedir,'data.sqlite')
+#     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#     db.init_app(app)  
+#     return app
+
+# app = create_app()
 
 # 测试mysql是否正常连接
 # with app.app_context():
@@ -76,4 +90,4 @@ def hello_world():
 from resources import pillr
 from resources import userr
 
-# swagger = Swagger(app)
+swagger = Swagger(app)

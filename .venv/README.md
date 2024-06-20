@@ -1,11 +1,5 @@
-> It is my first time to publish my code for a project 
->
-> and hence I am not sure whether the files in .venv (virtual environment) may leak my privacy.
->
-> Eventually, as you see, I decided to delete the files in .venv for git push.
+Files here have been deleted for safety sake.
 
-You can establish the virtual environment based on `../requirements.txt`, 
+You may deploy and activate virtual environment (.venv) on your own device using `requirements.txt`.
 
-using command ``pip install``.
-
-> Have a nice day :)
+Thank you for your spending time reading my first piece of work. Have a nice day!
