@@ -1,8 +1,8 @@
 ## Project-Pillcase
 
-Backend for Project Pillcase. 
+Backend for *Project Pillcase*, a class project of *Introduction to Engineering*. 
 
-Learning:
+Intended to learn:
 - Flask
 - RESTful api
 - MySQL
