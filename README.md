@@ -1,6 +1,7 @@
 ## Project-Pillcase
 
 Backend for Project Pillcase. 
+
 Learning:
 - Flask
 - RESTful api
@@ -8,4 +9,5 @@ Learning:
 - SQLAlchemy
 - Swagger
 - Docker
+
 through the project.
